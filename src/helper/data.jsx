@@ -22,7 +22,7 @@ export const appointmentData = [
   },
 ];
 
-export const doctorData = [
+export const lawyerData = [
   {
     id: 1,
     name: "Hazel Valery",

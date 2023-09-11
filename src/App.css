@@ -1,0 +1,12 @@
+/*? Global Style for App  */
+
+.lawyer-img{
+    max-height: 130px;
+    transition: transform 0.5s;
+}
+
+.lawyer-img:hover{
+    transform: scale(1.03);
+    border: 2px solid rgb(50,10,200);
+    cursor: pointer;
+}
