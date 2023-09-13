@@ -6,13 +6,16 @@ import { useState } from "react";
 
 const Lawyers = ({ lawyers }) => {
       const [show, setShow] = useState(false);
+      const [selectedLwName, setselectedLwName] = useState("")
+      console.log(selectedLwName)
 
     //   const handleClose = () => setShow(false);
     //   const handleShow = () => setShow(true);
 
-    const handleClick = () => {
+    const handleClick = (lwname) => {
         // handleShow()
         setShow(true)
+        setselectedLwName(lwname)
     }
   return (
     <Container className="p-2">
@@ -23,14 +26,14 @@ const Lawyers = ({ lawyers }) => {
         {lawyers.map((lw) => (
         <Col  key={lw.id} xs={6} sm={4} md={3} >
             <img src={lw.img} alt={lw.img} className="img-thumbnail lawyer-img"
-            onClick={handleClick} />
+            onClick={() => handleClick(lw.name)} />
             <h5>{lw.name}</h5>
             <h6>{lw.dep}</h6>
         </Col>
         ))}
       </Row>
       {/* <AddModal show={show} handleClose={handleClose} /> */}
-      <AddModal show={show} handleClose={() => setShow(false)} />
+      <AddModal show={show} handleClose={() => setShow(false)} lwName={selectedLwName} />
     </Container>
   );
 };
