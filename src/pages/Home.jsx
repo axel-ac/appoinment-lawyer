@@ -2,9 +2,11 @@ import { useState } from "react";
 import AppointmentList from "../components/AppointmentList";
 import Lawyers from "../components/Lawyers";
 import {lawyerData} from "../helper/data"
+import { appointmentData } from "../helper/data";
 
 const Home = () => {
     const [lawyers, setLawyers] = useState(lawyerData)
+    const [appointments, setAppointments] = useState(appointmentData);
     console.log(lawyers)
     console.log(setLawyers)
     
