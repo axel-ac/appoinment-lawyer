@@ -9,6 +9,8 @@ const Home = () => {
     const [appointments, setAppointments] = useState(appointmentData);
     console.log(lawyers)
     console.log(setLawyers)
+    console.log(appointments);
+    console.log(setAppointments);
     
   return (
     <main className="text-center mt-2 vh-100">
