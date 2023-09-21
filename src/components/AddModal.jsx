@@ -17,14 +17,15 @@ function AddModal({
   const handleSubmit = (e) => {
     e.preventDefault();
     setAppointments([
-      ...appointments,{
-        id: appointments.length + 1,
+      ...appointments,
+      {
+        id: new Date().getTime(),
         name: setName,
         day: date,
         consulted: false,
         lawyer: lwName,
-      }
-    ])
+      },
+    ]);
     handleClose();
   };
   console.log(appointments)
@@ -54,7 +55,7 @@ function AddModal({
             </Form.Group>
             <div className="text-center">
               <Button variant="success" type="submit" className="me-2">
-                Save
+                Submit
               </Button>
               <Button variant="danger" onClick={handleClose}>
                 Close
