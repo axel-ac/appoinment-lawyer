@@ -3,18 +3,31 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 
-function AddModal({ show, handleClose, lwName }) {
-  const [name, setName] = useState("")
-  const [date, setDate] = useState("")
-  console.log(name, date)
+function AddModal({
+  show,
+  handleClose,
+  lwName,
+  appointments,
+  setAppointments,
+}) {
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+  console.log(name, date);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-
-
-    handleClose()
-  }
-
+    e.preventDefault();
+    setAppointments([
+      ...appointments,{
+        id: appointments.length + 1,
+        name: setName,
+        day: date,
+        consulted: false,
+        lawyer: lwName,
+      }
+    ])
+    handleClose();
+  };
+  console.log(appointments)
   return (
     <>
       <Modal show={show} onHide={handleClose}>
