@@ -20,7 +20,7 @@ function AddModal({
       ...appointments,
       {
         id: new Date().getTime(),
-        name: setName,
+        name: name,
         day: date,
         consulted: false,
         lawyer: lwName,
